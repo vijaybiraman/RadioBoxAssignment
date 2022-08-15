@@ -1,0 +1,27 @@
+﻿<Window x:Class="DistinctCountryWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DistinctCountryWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBlock Width="100" Height="20" Name="Countryname" Text="Country Name" Margin="10,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBlock>
+
+        <ComboBox Margin="120,20,0,13" Name="txtcountry" Background="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="194" Height="30">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <RadioButton Content="{Binding}"></RadioButton >
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ComboBox>
+
+        <Button Width="70" Height="30" Content="Show" Margin="10,50,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click"></Button>
+        <StackPanel  Name="MainLayout" Loaded="MainLayout_Loaded">
+            <DataGrid ItemsSource="{Binding}" Margin="10,100,0,0" Width="700" Height="300" HorizontalAlignment="Left" VerticalAlignment="Top" Name="getEmps"></DataGrid>
+        </StackPanel>
+    </Grid>
+   
+    
+</Window>
